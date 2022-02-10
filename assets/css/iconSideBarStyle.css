@@ -1,0 +1,301 @@
+/* General */
+
+body {
+    background-color: rgb(201, 196, 196);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-size: 13px;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropOpen {
+    max-height: 700px !important;
+    opacity: 1 !important;
+ 
+
+}
+
+
+.viewSide{
+    max-width: 200px !important;
+    opacity: 1 !important;
+    padding: 5px !important;
+}
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.dBlock {
+    display: block !important;
+}
+
+.dNone {
+    display: none !important;
+}
+
+.container {
+    width: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.scaleItem:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/* sideBar */
+
+.sideBar {
+
+    transition: 0.5s;
+    background: white;
+    padding: 5px;
+    display: block;
+    opacity: 0;
+    max-width: 0;
+    min-height: 100vh;
+    box-shadow: 1px 2px 20px #0000001e;
+
+}
+
+.bgb {
+    background: linear-gradient(#004cff, #3800ff);
+    color: white;
+}
+
+
+
+.sideBarBtn {
+    background: linear-gradient(#004cff, #3800ff);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 7px 10px;
+    float: right;
+    margin: 5px 15px;
+    box-sizing: border-box;
+
+}
+
+.sideBarItem {
+
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 1px 2px 20px #00000036;
+    padding: 10px;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0px
+}
+
+.sideBarItem:hover .sideBarItemToolTip{
+    max-width: 1000px;
+    opacity: 1;
+}
+
+.sideBarItem:visited .sideBarItemToolTip{
+    max-width: 0;
+    opacity: 0;
+}
+.sideBarItemToolTip{
+    max-width: 0;
+    opacity: 0;
+    transition: 0.5s;
+    color:black;
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    left: 60px;
+}
+
+
+
+
+
+
+/* @media screen and (max-width:768px) {
+    .sideBar {
+        position: absolute;
+        top: 53px
+    }
+} */
+
+@media screen and (max-width:600px) {
+    .navHead {
+        display: none;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* DropDown */
+
+
+
+.dropList {
+
+
+    display: block;
+    transition: 0.5s;
+    max-height: 0;
+    opacity: 0;
+    position: absolute;
+    left: 50px;
+    
+
+}
+
+.dropItem {
+
+    width: 200px;
+    background-color: #004cff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 20px #00000036;
+    padding: 15px 10px;
+    margin: 5px 5px;
+    color: white;
+    cursor: pointer;
+
+
+}
+
+.dropItem:hover {
+    background-color: rgb(214, 207, 207);
+    transition: 0.5s;
+}
+
+
+
+
+/* navBar */
+
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2px 5px;
+    background: white;
+    color: black;
+    flex-grow: 1;
+    border-radius: 5px;
+    margin: 5px 15px;
+
+}
+
+.navHead{
+    font-weight: 100;
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+}
+
+.navLeft i,
+.navRight i {
+    margin: 0px 10px;
+}
+
+
+
+.navRight {}
+
+
+.navSearch {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(#004cff, #3700ffdc);
+    flex-grow: 1;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navSearchBtn:hover{
+    background: linear-gradient(#004cff, #3700ffdc);
+    cursor: pointer;
+    color: white;
+    
+}
+
+.navSearchBtn{
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+
+
+.rightMain {
+    flex-grow: 1;
+}
+
+
+
+.infoDiv {
+    background: white;
+    width: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.infoIcon {
+    width: fit-content;
+}
+
+.infoList {
+    display: none;
+}
+
+#detForm {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    min-height: 70vh;
+    align-items: flex-start;
+}
+
+#formContainer {
+    background-color: rgb(5, 72, 216);
+    border-radius: 10px;
+    padding: 5px 10px;
+
+}
+
+.detFormInputDiv {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.detFormInput {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    margin: 3px;
+
+}

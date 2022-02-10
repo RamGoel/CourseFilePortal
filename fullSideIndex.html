@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+
+    <link rel="stylesheet" href="assets/css/fullSideBarStyle.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <script src="assets/js/fullSideBarJs.js "></script>
+</head>
+
+<body>
+    <div id="sideBar" class="sideBar dNone ">
+
+        <div class="container">
+
+            <div class=" dropDown" onclick="openDropDown(1)">
+                <div class="sideBarItem scaleItem">
+                    <div class="left">
+                        <i class=" fa fa-home fa-lg"></i>
+                        <p class="sideBarItemName">Department</p>
+                    </div>
+
+                    <i class="fa fa-arrow-down" id=""></i>
+                </div>
+                <div class="dropList" id="dropList1">
+                    <a href="">
+                        <p class="dropItem">ABES Mission, Vision Statement</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Department Mission and Vission</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Class Time Table</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Faculty Time Table</p>
+                    </a>
+
+                </div>
+
+            </div>
+            <div class=" dropDown" onclick="openDropDown(2)">
+                <div class="sideBarItem scaleItem">
+                    <div class="left">
+                        <i class=" fa fa-building-o fa-lg"></i>
+                        <p class="sideBarItemName">University</p>
+                    </div>
+                    <i class="fa fa-arrow-down  " id=""></i>
+                </div>
+                <div class="dropList" id="dropList2">
+
+                    <a href="">
+                        <p class="dropItem">University Syllabus</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Acadmic Calender</p>
+                    </a>
+                </div>
+
+            </div>
+            <div class=" dropDown" onclick="openDropDown(3)">
+                <div class="sideBarItem scaleItem">
+                    <div class="left">
+                        <i class=" fa fa-graduation-cap fa-lg"></i>
+                        <p class="sideBarItemName">Students</p>
+                    </div>
+                    <i class="fa fa-arrow-down  " id=""></i>
+                </div>
+                <div class="dropList" id="dropList3">
+                    <a href="">
+                        <p class="dropItem">List of Students</p>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class=" dropDown" onclick="openDropDown(4)">
+                <div class="sideBarItem scaleItem">
+                    <div class="left">
+                        <i class=" fa fa-home fa-lg"></i>
+                        <p class="sideBarItemName">Tests/Exams</p>
+                    </div>
+                    <i class="fa fa-arrow-down  " id=""></i>
+                </div>
+                <div class="dropList" id="dropList4">
+                    <a href="">
+                        <p class="dropItem">Assignments/Quizzes/Test with Answer Key</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Assignments/Test/Quizzes Marks</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Tutorial Sheets for Numerical Problems</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Sessional/PUE Question Papers</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Sessional/PUE Award Sheet</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Sessional/PUE Gap Analysis and CO attatinment</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Review of University Question Paper</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Weak Students List and their Make up Classes</p>
+                    </a>
+                </div>
+
+            </div>
+            <div class=" dropDown" onclick="openDropDown(5)">
+                <div class="sideBarItem scaleItem">
+                    <div class="left">
+                        <i class=" fa fa-home fa-lg"></i>
+                        <p class="sideBarItemName">Course</p>
+                    </div>
+                    <i class="fa fa-arrow-down  " id=""></i>
+                </div>
+                <div class="dropList" id="dropList5">
+                    <a href="">
+                        <p class="dropItem">Course Exit Survey and Analysis</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Overall CO attatinment</p>
+                    </a>
+
+                </div>
+
+            </div>
+            <div class=" dropDown" onclick="openDropDown(6)">
+                <div class="sideBarItem scaleItem">
+                    <div class="left">
+                        <i class=" fa fa-home fa-lg"></i>
+                        <p class="sideBarItemName">Miscellaneous</p>
+                    </div>
+                    <i class="fa fa-arrow-down  " id=""></i>
+                </div>
+                <div class="dropList" id="dropList6">
+                    <a href="">
+                        <p class="dropItem">Faculty Notes</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Books & Web Content</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Previous Year Question Paper</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Pre-Requisites and Mapping of CO's</p>
+                    </a>
+                    <a href="">
+                        <p class="dropItem">Lecture Plan and Delivery Schedule</p>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div>
+            <button class="sideBarBtn scaleItem"><i class="fa fa-sign-out"></i>Log Out</button>
+        </div>
+    </div>
+
+
+
+    <div class="rightMain">
+
+        <div class="navBar">
+            <div class="navLeft">
+                <i class="fa fa-navicon fa-lg" id="openSideBar" onclick="viewSideBar()"></i>
+                <p class="navHead">Ram Goel</p></a>
+            </div>
+
+            <div class="navRight">
+                <input type="text" class="navSearch ">
+                <i class="fa fa-search fa-lg"></i>
+            </div>
+        </div>
+
+
+        <!-- <div id="formContainer" class="container ">
+            <div class="infoDiv" onclick="viewInfo()">
+                <i class="infoIcon fa fa-list fa-lg" ></i>
+                <ul class="infoList dNone" id="infoList" >
+                    <li class="infoItem">Happen after sessional Test</li>
+                    <li class="infoItem">Upload in PDF only</li>
+                    <li class="infoItem">Belong to this semester only.</li>
+                    <li class="infoItem">Write all details properly.</li>
+                </ul>
+            </div>
+
+
+
+            <!-- <form action="#" id="detForm" method="POST">
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+               <div class="ormInputDiv"> Enter the Value :<input type="text" name="typeName" id="" class="detFormInput" placeholder="Enter Student Percentage"></div>
+            </form> -->
+
+    </div> -->
+    </div>
+
+
+
+</body>
+
+</html>
