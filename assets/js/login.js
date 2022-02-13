@@ -84,7 +84,7 @@ function logging() {
     var Alert = document.getElementById("loginformAlert");
     firebase.auth().onAuthStateChanged((user) => {
         if (user.email == "admin@ecellcse.in") {
-            location.replace("admin.html")
+            location.replace("user.html")
         }
         else {
             if (user.emailVerified) {
