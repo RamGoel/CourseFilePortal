@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="subject" content=" ">
+  <meta name="copyright" content=" ">
+  <meta name="revised" content=" " />
+  <meta name="author" content=" " />
+  <link href=" " rel="canonical" />
+
+  <!--( Title )-->
+  <title>User | Course File Portal</title>
+
+  <!--( Favicon )-->
+  <link rel="shortcut icon" href="./assets/img/logo/logo.png" type="image/x-icon">
+
+  <!--( Internal Styles )-->
+  <link rel="stylesheet" href="./assets/css/user.css">
+
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+      <h1><a href="index.html" class="logo"><img src="./assets/img/logo/logo.png" width="60px"></a></h1>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a onclick="showdashboard_section()" href="#home"><span class="fa fa-home"></span> Home</a>
+        </li>
+        <li>
+          <a onclick="showprofile_section()" href="#profile"><span class="fa fa-user"></span> Profile</a>
+        </li>
+        <li>
+          <a onclick="showhelp_section()" href="#help"><span class="fa fa-info"></span> Help</a>
+        </li>
+        <li>
+          <a onclick="logoutwithprompt()" href="#logout"> Logout</a>
+        </li>
+      </ul>
+      <div class="footer">
+        <p>
+          Copyright &copy; ABESEC<br>
+          Designed by ECell CSE
+        </p>
+      </div>
+    </nav>
+    <!-- End of Sidebar -->
+
+    <!-- Start of Navbar  -->
+    <section id="content" class="m-2">
+      <nav class="navbar justify-content-between">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+          <i class="fa fa-arrow-right"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+        <ul style="list-style-type:none;">
+          <li class="nav-item dropdown">
+            <a class="navbar-brand text-decoration-none" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img id="user-profile-photo" src="./assets/img/icon/profile.png" width="35" height="35"
+                class="rounded-circle"><span id="user-name-card" class="ml-2"
+                style="color:rgb(0, 0, 0)!important;"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#dashboard">Dashboard</a>
+              <a class="dropdown-item" href="#profile">Update Profile</a>
+              <a onclick="logoutwithprompt()" class="dropdown-item" href="#logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+
+      <!-- Dashboard Section -->
+      <section id="dashboard-section" class="d-none">
+        <h2 class="ml-4">Dashboard</h2>
+
+      </section>
+
+      <!-- Profile Section -->
+      <section id="profile_section" class="d-none">
+        <h2 class="ml-4">Profile</h2>
+      </section>
+
+      <!-- Help Section -->
+      <section id="help_section" class="d-none">
+        <h2 class="ml-4">Help</h2>
+      </section>
+    </section>
+  </div>
+
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+  <!-- Internal JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/combine/npm/sweetalert2@11.3.2/dist/sweetalert2.all.min.js,npm/sweetalert2@11.3.2/dist/sweetalert2.min.js,npm/sweetalert2@11.3.2,npm/sweetalert2@11.3.2/dist/sweetalert2.min.js"></script>
+
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
+  <script src="./assets/js/firebase.js"></script>
+  <script src="./assets/jsuser/profile.js"></script>
+  <script src="./assets/jsuser/sections.js"></script>
+</body>
+
+</html>
