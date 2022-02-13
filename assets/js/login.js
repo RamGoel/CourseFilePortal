@@ -1,9 +1,5 @@
 //--------------------------------------------------Start of Login Function --------------------------------------------------//
 
-function adminonly(){
-    alert("Admin Only");
-}
-
 // Form Setup
 document.getElementById("loginForm").addEventListener("submit", (event) => {
     event.preventDefault()
