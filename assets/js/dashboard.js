@@ -17,3 +17,15 @@
   });
 
 })(jQuery);
+
+
+
+//Function for File Inputs View
+
+function openInputDrop(a){
+    var html=document.getElementById(`inputDrop${a}`).innerHTML;
+  
+    
+    document.getElementById('uploadSection').innerHTML=html;
+    
+}

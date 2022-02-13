@@ -38,10 +38,10 @@
           <a onclick="showprofile_section()" href="#profile"><span class="fa fa-user"></span> Profile</a>
         </li>
         <li>
-          <a onclick="showhelp_section()" href="#help"><span class="fa fa-info"></span> Help</a>
+          <a onclick="showfile_section()" href="#files"><span class="fa fa-file"></span> View Files</a>
         </li>
         <li>
-          <a onclick="logoutwithprompt()" href="#logout"> Logout</a>
+          <a onclick="logoutwithprompt()" href="#logout"><span class="fa fa-sign-out"></span> Logout</a>
         </li>
       </ul>
       <div class="footer">
@@ -69,8 +69,8 @@
                 style="color:rgb(0, 0, 0)!important;"></span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#dashboard">Dashboard</a>
-              <a class="dropdown-item" href="#profile">Update Profile</a>
+              <a onclick="showdashboard_section()"class="dropdown-item" href="#dashboard">Dashboard</a>
+              <a onclick="showprofile_section()"class="dropdown-item" href="#profile">My Profile</a>
               <a onclick="logoutwithprompt()" class="dropdown-item" href="#logout">Logout</a>
             </div>
           </li>
@@ -79,19 +79,526 @@
 
 
       <!-- Dashboard Section -->
-      <section id="dashboard-section" class="d-none">
+      <section id="dashboard_section" class="d-none">
         <h2 class="ml-4">Dashboard</h2>
 
+    <div id="mainForm" class="formDiv">
+        <div id="catoDiv">
+
+            <div class="  container formContainer ">
+
+                <div class="  inputCategory" onclick="openInputDrop(1)">
+                    <i class="  fa fa-arrow-right fa-lg "></i>
+                    <p>Mission & Vision</p>
+                </div>
+                <div class="  inputDropDown dNone" id="inputDrop1">
+                    <div class="  inputDiv">
+                        <h3> ABES Mission Vision</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="abesMissVision" id="abesMissVision"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3> Department Mission Vision</h3>
+                        <span class="  fileInputSpan">Upload
+                            <i class="  fa fa-lg fa-upload"></i> <input type="file" name="deptMissVision"
+                                id="deptMissVision"></span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="  container formContainer ">
+                <div class="  inputCategory" onclick="openInputDrop(2)">
+                    <i class="  fa fa-arrow-right fa-lg "></i>
+                    <p>Syllabus</p>
+                </div>
+                <div class="  inputDropDown dNone" id="inputDrop2">
+                    <div class="  inputDiv">
+                        <h3> Academic Calender</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="acadCalender" id="acadCalender"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3> University Syllabuss</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="uniSyllabus" id="uniSyllabus"></span>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="  container formContainer ">
+                <div class="  inputCategory" onclick="openInputDrop(3)">
+                    <i class="  fa fa-arrow-right fa-lg "></i>
+                    <p>Time Table/Schedule</p>
+                </div>
+                <div class="  inputDropDown dNone" id="inputDrop3">
+                    <div class="  inputDiv">
+                        <h3> Class Time Table</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="classTimeTable" id="classTimeTable"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3> Faculty Time Table</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="facultyTimeTable" id="facultyTimeTable"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Lecture Plan and Delivery Schedule</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="lecPlan" id="lecPlan"></span>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="  container formContainer ">
+                <div class="  inputCategory" onclick="openInputDrop(4)">
+                    <i class="  fa fa-arrow-right fa-lg "></i>
+                    <p>Books/Notes & Assignments</p>
+                </div>
+                <div class="  inputDropDown dNone" id="inputDrop4">
+                    <div class="  inputDiv">
+                        <h3>Faculty Notes</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="facultyNotes" id="facultyNotes"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Class PPT's</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="classPPT" id="classPPT"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Assignments</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="assignments" id="assignments"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Course Books</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="courseBook" id="courseBook"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="  container formContainer ">
+                <div class="  inputCategory" onclick="openInputDrop(5)">
+                    <i class="  fa fa-arrow-right fa-lg "></i>
+                    <p>Question Papers/Answer Keys</p>
+                </div>
+                <div class="  inputDropDown dNone" id="inputDrop5">
+                    <div class="  inputDiv">
+                        <h3>University Previous Year Question Papers</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="uniPreQuestionPaper" id="uniPreQuestionPaper"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3> University Paper Review</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="uniPaperReview" id="uniPaperReview"></span>
+
+                    </div>
+
+                    <div class="  inputDiv">
+                        <h3>Sessional Question Papers</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="sessQuestionPaper" id="sessQuestionPaper"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>PUE Question Papers</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="pueQuestionPaper" id="pueQuestionPaper"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Class Test Question Papers</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="ctQuestionPaper" id="ctQuestionPaper"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Answer Keys - Sessional</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="sessAnswerKeys" id="sessAnswerKeys"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Answer Keys - PUE</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="pueAnswerKeys" id="pueAnswerKeys"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Answer Keys - ClassTest</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="ctAnswerKeys" id="ctAnswerKeys"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Answer Keys - University Exams</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="ueAnswerKeys" id="ueAnswerKeys"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="  container formContainer ">
+                <div class="  inputCategory" onclick="openInputDrop(10)">
+                    <i class="  fa fa-arrow-right fa-lg "></i>
+                    <p>Solution and Marks</p>
+                </div>
+                <div class="  inputDropDown dNone" id="inputDrop10">
+                    <div class="  inputDiv">
+                        <h3>Tutorial Sheets (Numerical Problems)</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="tutorialSheets" id="tutorialSheets"></span>
+
+                    </div>
+
+                    <div class="  inputDiv">
+                        <h3>Sessional/PUE Award Sheet</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="awardSheet" id="awardSheet"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Assignment Marks</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="assignMarks" id="assignMarks"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Test Marks</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="testMarks" id="testMarks"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Quizzes Marks</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="quizMarks" id="quizMarks"></span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="  container formContainer ">
+                <div class="  inputCategory" onclick="openInputDrop(9)">
+                    <i class="  fa fa-arrow-right fa-lg "></i>
+                    <p>CO's/PO's/PSO's</p>
+                </div>
+                <div class="  inputDropDown dNone" id="inputDrop9">
+                    <div class="  inputDiv">
+                        <h3>Course Exit Survey and Analysis</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="courseExit" id="courseExit"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Overall CO attatinment</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="overallCO" id="overallCO"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Pre-Requisites and Mapping of CO's</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="mappingCO" id="mappingCO"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Sessional/PUE Gap Analysis and CO attatinment</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="gapAnalysis" id="gapAnalysis"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="  container formContainer ">
+                <div class="  inputCategory" onclick="openInputDrop(10)">
+                    <i class="  fa fa-arrow-right fa-lg "></i>
+                    <p>Students</p>
+                </div>
+                <div class="  inputDropDown dNone" id="inputDrop10">
+                    <div class="  inputDiv">
+                        <h3>List of Students</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="listStudents" id="listStudents"></span>
+
+                    </div>
+                    <div class="  inputDiv">
+                        <h3>Weak Students List and their Make up Classes</h3>
+                        <span class="  fileInputSpan">Upload <i class="  fa fa-lg fa-upload"></i> <input type="file"
+                                name="weakStudents" id="weakStudents"></span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="  container formContainer ">
+                <div class="  inputCategory " onclick="" style="background:red !important;" onclick="createFile()">
+                    <i class="  fa fa-check fa-lg "></i>
+                    <p>Create a File</p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div id="uploadSection">
+
+        </div>
+    
+
       </section>
+
+
 
       <!-- Profile Section -->
       <section id="profile_section" class="d-none">
         <h2 class="ml-4">Profile</h2>
+        <div class="profileDiv">
+<div class="container">
+    <div class="profileHead">
+
+        <img src="./assets/img/icon/profile.png" alt="" class="userDp" width="200px">
+        <div class="profileHeadText">
+
+          <h1>Demo User</h1>
+          <button class="profileBtn"><i class="fa fa-edit"></i>Edit Profile</button>
+        </div>
+    </div>
+
+    <div class="profileText">
+        <div class="profileList">
+            <div class="profileItem">
+                <div class="profileItemLeft">
+                    <i class="fa fa-lg fa-pencil"></i>
+                    <p class="profileItemText">Designation</p>
+                </div>
+                <div class="profileItemRight">
+                    <p class="profileItemText">Assistant Professor</p>
+                </div>
+                
+            </div>
+            <div class="profileItem">
+                <div class="profileItemLeft">
+                    <i class="fa fa-lg fa-building"></i>
+                    <p class="profileItemText">Department</p>
+                </div>
+                <div class="profileItemRight">
+                    <p class="profileItemText">Computer Science and Engineering</p>
+                </div>
+                
+            </div>
+            <div class="profileItem">
+                <div class="profileItemLeft">
+                    <i class="fa fa-lg fa-book"></i>
+                    <p class="profileItemText">Courses</p>
+                </div>
+                <div class="profileItemRight">
+                    <p class="profileItemText">Computer Oraganization, Digital Electronics</p>
+                </div>
+                
+            </div>
+            <div class="profileItem">
+                <div class="profileItemLeft">
+                    <i class="fa fa-lg fa-sign-in"></i>
+                    <p class="profileItemText">Registered On</p>
+                </div>
+                <div class="profileItemRight">
+                    <p class="profileItemText">01/02/2021</p>
+                </div>
+                
+            </div>
+            <div class="profileItem">
+                <div class="profileItemLeft">
+                    <i class="fa fa-lg fa-phone"></i>
+                    <p class="profileItemText">Contact Number</p>
+                </div>
+                <div class="profileItemRight">
+                    <p class="profileItemText">+910101010100</p>
+                </div>
+                
+            </div>
+            <div class="profileItem">
+                <div class="profileItemLeft">
+                    <i class="fa fa-lg fa-send"></i>
+                    <p class="profileItemText">Mail Id</p>
+                </div>
+                <div class="profileItemRight">
+                    <p class="profileItemText">demoUser@abes.ac.in</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
       </section>
 
       <!-- Help Section -->
-      <section id="help_section" class="d-none">
-        <h2 class="ml-4">Help</h2>
+      <section id="file_section" class="d-none">
+        <h2 class="ml-4">All Files</h2>
+        <div class="filesContainer ">
+          <div class="filesRow">
+              
+              <div class="fileDiv">
+                  <div class="fileText">
+          
+                      <p class="fileTitle">Course File of Ashok Bajpayee</p>
+                      <p class="filePara">Computer Science and Engineering</p>
+                  </div>
+          
+                  <div class="fileIcons">
+                      <div class="icon">
+                          <i class="fa fa-2x fa-trash "></i><p class="fileToolTip">Delete</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-edit "></i><p class="fileToolTip">Edit</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-download "></i><p class="fileToolTip">Download</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-share "></i><p class="fileToolTip">Share</p>
+                      </div>
+                      
+                     
+                      
+                  </div>
+          
+              </div>
+              <div class="fileDiv">
+                  <div class="fileText">
+          
+                      <p class="fileTitle">Course File of Ashok Bajpayee</p>
+                      <p class="filePara">Computer Science and Engineering</p>
+                  </div>
+          
+                  <div class="fileIcons">
+                      <div class="icon">
+                          <i class="fa fa-2x fa-trash "></i><p class="fileToolTip">Delete</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-edit "></i><p class="fileToolTip">Edit</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-download "></i><p class="fileToolTip">Download</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-share "></i><p class="fileToolTip">Share</p>
+                      </div>
+                      
+                     
+                      
+                  </div>
+          
+              </div>
+              <div class="fileDiv">
+                  <div class="fileText">
+          
+                      <p class="fileTitle">Course File of Ashok Bajpayee</p>
+                      <p class="filePara">Computer Science and Engineering</p>
+                  </div>
+          
+                  <div class="fileIcons">
+                      <div class="icon">
+                          <i class="fa fa-2x fa-trash "></i><p class="fileToolTip">Delete</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-edit "></i><p class="fileToolTip">Edit</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-download "></i><p class="fileToolTip">Download</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-share "></i><p class="fileToolTip">Share</p>
+                      </div>
+                      
+                     
+                      
+                  </div>
+          
+              </div>
+              <div class="fileDiv">
+                  <div class="fileText">
+          
+                      <p class="fileTitle">Course File of Ashok Bajpayee</p>
+                      <p class="filePara">Computer Science and Engineering</p>
+                  </div>
+          
+                  <div class="fileIcons">
+                      <div class="icon">
+                          <i class="fa fa-2x fa-trash "></i><p class="fileToolTip">Delete</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-edit "></i><p class="fileToolTip">Edit</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-download "></i><p class="fileToolTip">Download</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-share "></i><p class="fileToolTip">Share</p>
+                      </div>
+                      
+                     
+                      
+                  </div>
+          
+              </div>
+              <div class="fileDiv">
+                  <div class="fileText">
+          
+                      <p class="fileTitle">Course File of Ashok Bajpayee</p>
+                      <p class="filePara">Computer Science and Engineering</p>
+                  </div>
+          
+                  <div class="fileIcons">
+                      <div class="icon">
+                          <i class="fa fa-2x fa-trash "></i><p class="fileToolTip">Delete</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-edit "></i><p class="fileToolTip">Edit</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-download "></i><p class="fileToolTip">Download</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fa fa-2x fa-share "></i><p class="fileToolTip">Share</p>
+                      </div>
+                      
+                     
+                      
+                  </div>
+          
+              </div>
+              
+          </div>
+          </div>
       </section>
     </section>
   </div>
