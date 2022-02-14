@@ -806,6 +806,10 @@ h3,h4{
   z-index: 1;
 }
 
+
+.bgSuccess{
+  background-color: greenyellow;
+}
 .inputCategory p {
   margin: 3px 10px;
 }
@@ -816,6 +820,9 @@ h3,h4{
   transform: scale(1.01);
 }
 
+
+
+
 .inputDiv {
   display: flex;
   align-items: center;
@@ -823,7 +830,7 @@ h3,h4{
   padding: 0px 15px;
   border-radius: 5px;
   margin: 5px 0px;
-
+  background:none;
 
 }
 
@@ -844,6 +851,7 @@ h3,h4{
   background-color: #3800ff;
   padding: 7px;
   border-radius: 10px;
+  border: none;
   color: white;
   display: inline-flex;
   align-items: center;
@@ -915,6 +923,9 @@ h3,h4{
 .fileIcons i{
   margin: 0px 5px;
 }
+
+
+
 
 .fileIcons i:hover{
   color: #3800ff;
