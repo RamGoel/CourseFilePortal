@@ -1,7 +1,9 @@
 function hideall(){
     document.getElementById('dashboard_section').classList.add("d-none");
-    document.getElementById('profile_section').classList.add("d-none");
     document.getElementById('file_section').classList.add("d-none");
+    // document.getElementById('profile_section').classList.add("d-none");
+    // document.getElementById('editprofile_section').classList.add("d-none");
+    document.getElementById('home_section').classList.add("d-none");
 }
 
 function showdashboard_section(){
@@ -13,17 +15,19 @@ function showdashboard_section(){
     document.getElementById('dashboard_section').classList.remove("d-none");
 }
 
-
-function showprofile_section(){
-    hideall();
-    document.getElementById('profile_section').classList.remove("d-none");
-}
 function showfile_section(){
     hideall();
-    document.getElementById('file_section').classList.remove("d-none");
+    document.getElementById('fileViewIcon').classList.remove('fa-file');
+    document.getElementById('fileViewIcon').classList.add('fa-spinner');
+    document.getElementById('fileViewIcon').classList.add('fa-spin');
+    showAllFiles();
+   
+
 }
-
-
+function showhome_section(){
+    hideall();
+    document.getElementById('home_section').classList.remove("d-none");
+}
 
 //Function for File Inputs View
 
@@ -39,16 +43,6 @@ function openInputDrop(a){
 
 
 
-//Function to validate uploaded file.
 
-function fileUpload(elem){
-    
-    elem.children[1].click();
-    elem.style.background="green";
-    elem.innerHTML=`<i class="fa fa-lg fa-check"></i>Uploaded`;
-    console.log("DONE");
-    
 
-    
-    
-}
+

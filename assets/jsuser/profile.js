@@ -2,10 +2,12 @@ firebase.auth().onAuthStateChanged((user) => {
     if (!user) {
         location.replace("index.html")
     }
-    var Name = user.displayName;
+    const NameofUser = user.displayName;
     var Email = user.email;
     var Roll_No = user.photoURL;
-    document.getElementById("user-name-card").innerHTML = Name;
+    document.getElementById("user-name-card").innerHTML = NameofUser;
+    document.getElementById("user-id-card").innerHTML = `(${Roll_No})`;
+
 })
 
 // Logout Function with Prompt

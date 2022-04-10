@@ -98,7 +98,7 @@ function logging() {
                         AlertText = `
                         <div class="alert alert-secondary  alert-dismissible fade show text-center mb-1" role="alert">
                             <strong>Please Verify Your Email Id</strong><br>
-                            A verification email has been sent to your Email address Now.
+
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>`;
                         Alert.innerHTML += AlertText;
@@ -143,7 +143,7 @@ function signUp() {
                     .catch((error) => {
                         AlertText = `
                     <div class="alert alert-secondary  alert-dismissible fade show text-center mb-1" role="alert">
-                        <strong>${error.message}</strong>
+                        <strong>Some Error Occured! Try Again</strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>`;
                         Alert.innerHTML += AlertText;
