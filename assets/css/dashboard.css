@@ -13,6 +13,31 @@ progress {
 
 }
 
+.courseFileRow{
+  height: 70vh;
+}
+
+.modal-header{
+  background: #F48BA9;
+  color: #fff;
+}
+
+.modal{
+  keyboard:false;
+}
+.required:after {
+  content: "*";
+  color: red;
+}
+
+.modal-backdrop{
+  z-index: -1 !important;
+}
+
+.modal{
+  z-index: 5 !important;
+}
+
 #allFilesContainer {
   padding-bottom: 100px;
   display: flex;

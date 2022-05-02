@@ -1,85 +1,13 @@
-// function mergeAllPDFs(nameArr) {
-
-//   var urls = []
-//   if (nameArr.length >= 1) {
-//     const storageRef = firebase.storage().ref()
-//     let i = 0;
-//     for (i = 0; i < nameArr.length; i++) {
-//       let userName = document.getElementById('user-name-card').innerText
-//       var fileRef = storageRef.child(`${userName}/${nameArr[i]}`);
-//       fileRef.getDownloadURL().then((url) => {
-//         urls.push(url)
-//         console.log("Link Found")
-//       }).catch((response) => {
-//         alert(response.message)
-//       })
-//     }
-
-//     console.log("URL Array is", urls)
-//     copyPages(urls)
-
-//   } else {
-//     alert("No File Selected")
-//   }
-
-
-// }
-
-
-
-
-// async function copyPages(urlArr) {
-//   const url = ['https://firebasestorage.googleapis.com/v0/b/course-file-portal-abesec.appspot.com/o/Ram%2FE-cell%20Synopsis-2.pdf?alt=media&token=0a52b282-c9ef-41a5-b86e-105d801a9764','https://pdf-lib.js.org/assets/with_update_sections.pdf']
-
-//   // const url=Array.from(urlArr)
-//   console.log("*****",url)
-//   const pdfDoc = await PDFLib.PDFDocument.create();
-//   const numDocs = url.length;
-//   console.log("hitted")
-//   var  count=0;
-//   for(var i = 0; i < numDocs; i++) {
-//       const doc=url[i]
-//       console.log(doc)
-//       const donorPdfBytes = await fetch(doc).then(res => res.arrayBuffer()).catch((err)=>{
-//         console.log("myError",err)
-//       });
-//       const donorPdfDoc = await PDFLib.PDFDocument.load(donorPdfBytes);
-//       console.log(donorPdfDoc)
-//       const docLength = donorPdfDoc.getPageCount();
-//       console.log(docLength)
-
-//       for(var k = 0; k < docLength; k++) {
-
-//           const [donorPage] = await pdfDoc.copyPages(donorPdfDoc, [k]);
-//           console.log("Doc " + i+ ", page " + k);
-//           pdfDoc.insertPage(count,donorPage);
-//           count++;
-//       }
-
-//   const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
-
-//   document.getElementById('dashboard_section').innerHTML=`<iframe id="pdf" src="${pdfDataUri}" style="width: 100%; height: 90vh;"></iframe>`
-// }
-
-// }
-
-
-
-
+var arr = []
 document.getElementById('mainForm').addEventListener('submit', (e) => {
   e.preventDefault()
   const inputs = document.querySelectorAll('input')
-
-  var arr = Array.from(inputs);
+  arr = Array.from(inputs);
   arr.filter((elem) => {
     return elem.type == "file"
   })
 
-  var doc = new jsPDF();
-  doc.text("Hello world!", 20, 20);
-  doc.text("This is client-side Javascript, pumping out a PDF.", 20, 30);
-  doc.addPage("a6", "l");
-  doc.text("Do you like that?", 20, 20);
+  alert("File has been Created, View in View Files Section")
 
   // download(doc)
 
@@ -95,7 +23,7 @@ function uploadFile(event, elem) {
   var file = event.target.files[0];
   var storageRef = firebase.storage().ref();
   let userName = document.getElementById('user-name-card').innerText
-  var fileRef = storageRef.child(`${userName}/${file.name}`);
+  var fileRef = storageRef.child(`${userName}/${sessionValue}/${semValue}/${courseName}/${file.name}`);
   fileRef.put(file).then((result) => {
     const url = `gs://${result.ref.location.bucket}/${result.ref.location.path}`
     console.log(url)
@@ -114,26 +42,30 @@ function uploadFile(event, elem) {
 
 }
 
+
 function showAllFiles() {
   const container = document.getElementById('allFilesContainer');
   console.log('executed')
+  let sessionValue = prompt("Which Session")
+  let semValue = prompt("Even or Odd semester")
+
   // Create a reference under which you want to list
   var storageRef = firebase.storage().ref();
   let userName = document.getElementById('user-name-card').innerText
-  var listRef = storageRef.child(`${userName}/`);
+  var listRef = storageRef.child(`${userName}/${sessionValue}/${semValue}`);
 
   // Find all the prefixes and items.
   listRef.listAll()
     .then((res) => {
-      res.prefixes.forEach((folderRef) => {
-        folderRef.listAll()
-      });
-      if (res.items.length >= 1) {
+      if (res.prefixes.length >= 1) {
+
         container.innerHTML = ""
-        res.items.forEach((itemRef) => {
+        res.prefixes.forEach((folderRef) => {
           // All the items under listRef.
-          const fileName = itemRef.location.path_.split('/')[1];
-          const authorName = itemRef.location.path_.split('/')[0]
+          console.log(folderRef)
+          const fileVar = folderRef.location.path_.split('/');
+          const fileName = fileVar[fileVar.length - 1]
+          const authorName = folderRef.location.path_.split('/')[0]
           console.log(fileName)
 
           const newNode = ` <div class="fileDiv">
@@ -141,16 +73,17 @@ function showAllFiles() {
       
               <p class="fileTitle">${fileName}</p>
               <p class="filePara">${authorName}</p>
+              <p class="d-none " id="respectiveRef">${folderRef.location.path_}</p>
           </div>
       
           <div class="fileIcons">
-              <div class="icon" onclick="deleteFile(this.parentElement.previousElementSibling.childNodes[1].innerText)">
+              <div class="icon" onclick="deleteFile(this.parentElement.previousElementSibling.lastElementChild.innerText)">
                   <i class="fa fa-2x fa-trash "></i>
                   <p class="fileToolTip">Delete</p>
               </div>
-              <div class="icon">
-                  <i class="fa fa-2x fa-download "></i>
-                  <p class="fileToolTip">Download</p>
+              <div class="icon" onclick="viewFile(this.parentElement.previousElementSibling.lastElementChild.innerText)">
+                  <i class="fa fa-2x fa-eye "></i>
+                  <p class="fileToolTip">View</p>
               </div>
               <div class="icon">
                   <i class="fa fa-2x fa-share "></i>
@@ -170,7 +103,7 @@ function showAllFiles() {
         });
 
       } else {
-        container.innerHTML = "<p>No Files have been Created Yet</p>"
+        container.innerHTML = "<p>No Files availible for this Data</p>"
       }
 
       document.getElementById('file_section').classList.remove("d-none");
@@ -185,25 +118,81 @@ function showAllFiles() {
 }
 
 
-function deleteFile(text) {
 
-  let userName = document.getElementById('user-name-card').innerText
-  var storageRef = firebase.storage().ref();
+function deleteInnerFiles(pathToFile, fileName) {
+  const ref = firebase.storage().ref(pathToFile);
+  const childRef = ref.child(fileName);
+  childRef.delete()
+}
 
-  var deleteFileRef = storageRef.child(`${userName}/${text}`);
+function deleteFile(path) {
 
+
+  const ref = firebase.storage().ref(path);
   const choice = window.confirm("Do you really want to delete this File?")
   document.getElementById('allFilesContainer').innerHTML = '<i class="fa fa-2x fa-spinner fa-spin"></i>'
 
   if (choice) {
-    deleteFileRef.delete().then((res) => {
-      console.log(res)
+    ref.listAll().then(dir => {
+      dir.items.forEach(fileRef => this.deleteInnerFiles(ref.fullPath, fileRef.name));
+      dir.prefixes.forEach(folderRef => this.deleteFolder(folderRef.fullPath))
       showAllFiles()
-    })
+    }).catch(error => console.log(error));
   } else {
-    return
+
   }
 
 
+
+
+}
+
+
+
+function viewFile(path) {
+  alert("Veomm")
+  console.log("Ashok")
+  var container = document.getElementById('subFileContainer')
+  container.innerHTML = ""
+  var storageRef = firebase.storage().ref();
+  var listRef = storageRef.child(path);
+
+  var folderName=path.split('/')
+
+  document.getElementById('courseFileName').innerText=folderName[folderName.length-1]
+  listRef.listAll().then((res) => {
+    if (res.items.length >= 1) {
+
+      res.items.forEach((itemRef) => {
+        // All the items under listRef.
+        console.log(itemRef)
+        const fileVar = itemRef.location.path_.split('/');
+        const fileName = fileVar[fileVar.length - 1]
+        const authorName = itemRef.location.path_.split('/')[0]
+        console.log(fileName)
+
+        var subFileRef = storageRef.child(`${path}/${fileName}`)
+        subFileRef.getDownloadURL().then((url) => {
+          console.log(url)
+          const newNode = `<button id="subFileName" class="btn btn-dark w-100 my-1" onclick="document.getElementById('subFileIframe').src='${url}'">${fileName}</button>`
+          container.innerHTML += newNode;
+        }).catch((response) => {
+          alert(response.message)
+        })
+
+
+
+
+
+
+      });
+
+    } else {
+      container.innerHTML = "<p>No Files availible in this Course File</p>"
+    }
+  })
+
+  hideall()
+  document.getElementById('courseFile_section').classList.remove("d-none");
 
 }
